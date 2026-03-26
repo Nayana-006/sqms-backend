@@ -13,7 +13,7 @@ COPY pom.xml .
 COPY src src
 
 # Build the application
-RUN ./mvnw clean package -DskipTests
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
 # Create a non-root user for security
 RUN groupadd -r appuser && useradd -r -g appuser appuser
